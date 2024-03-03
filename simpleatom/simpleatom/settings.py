@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-o7pqx@1_!(1qwe6z#o02o(^+tt)u!9%9^9dk*fq(g&pl*gd5wt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['89.116.23.47']
+ALLOWED_HOSTS = [
+    '89.116.23.47',
+    'simpleatom.io'
+]
 
 
 # Application definition
