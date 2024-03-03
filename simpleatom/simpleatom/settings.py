@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '89.116.23.47',
-    'simpleatom.io'
+    'simpleatom.io',
+    'www.simpleatom.io'
 ]
 
 CORS_ALLOWED_ORIGINS = [
