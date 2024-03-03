@@ -30,6 +30,13 @@ ALLOWED_HOSTS = [
     'simpleatom.io'
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1",
+    "http://localhost",
+    "http://simleatom.io"
+]
+
 
 # Application definition
 
