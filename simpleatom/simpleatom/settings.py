@@ -137,3 +137,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/var/.well-known/acme-challenge/'
+MEDIA_ROOT = '/var/.well-known/acme-challenge/'
