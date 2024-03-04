@@ -113,3 +113,15 @@ class FormDataView(generics.CreateAPIView, generics.UpdateAPIView, generics.List
             queryset = FormAnswerModel.objects.filter(email=email)
             serializer = self.get_serializer(queryset, many=True)
             return Response(serializer.data)
+
+class QuestionsView(generics.CreateAPIView, generics.UpdateAPIView, generics.ListAPIView):
+    serializer_class = CustomFormSerializer
+    queryset = CustomFormModel.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        if request.query_params.get('form_name'):
+            queryset =  CustomFormModel.objects.filter(form_name=request.query_params['form_name'])
+            serializer = self.get_serializer(queryset, many=True)
+            return Response(serializer.data)
+        return self.list(request, *args, **kwargs)
+

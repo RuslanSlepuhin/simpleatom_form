@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '89.116.23.47',
     'simpleatom.io',
-    'www.simpleatom.io'
+    'www.simpleatom.io',
+    '127.0.0.1',
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'form',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
