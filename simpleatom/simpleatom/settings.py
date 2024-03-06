@@ -25,12 +25,14 @@ SECRET_KEY = 'django-insecure-o7pqx@1_!(1qwe6z#o02o(^+tt)u!9%9^9dk*fq(g&pl*gd5wt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '89.116.23.47',
-    'simpleatom.io',
-    'www.simpleatom.io',
-    '127.0.0.1',
-]
+# ALLOWED_HOSTS = [
+#     '89.116.23.47',
+#     'simpleatom.io',
+#     'www.simpleatom.io',
+#     '127.0.0.1',
+# ]
+
+ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
