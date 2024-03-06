@@ -8,6 +8,10 @@ from .variables import variables
 from .serializers import *
 from .models import *
 
+def home_page_view(request):
+    return render(request, 'home.html')
+
+
 class FormDataView(generics.CreateAPIView, generics.UpdateAPIView, generics.ListAPIView):
 
     serializer_class = FormDataSerializer
