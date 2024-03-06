@@ -9,7 +9,7 @@ from .serializers import *
 from .models import *
 
 def home_page_view(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 
 class FormDataView(generics.CreateAPIView, generics.UpdateAPIView, generics.ListAPIView):
