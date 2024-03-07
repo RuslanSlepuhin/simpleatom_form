@@ -1,20 +1,29 @@
+{%load static%}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./simpleatom.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simpleatom</title>
-    <script type="module">
-      import RefreshRuntime from 'http://localhost:5173/@react-refresh'
-      RefreshRuntime.injectIntoGlobalHook(window)
-      window.$RefreshReg$ = () => {}
-      window.$RefreshSig$ = () => (type) => type
-      window.__vite_plugin_react_preamble_installed__ = true
-    </script>
-    <script type="module" src="http://localhost:5173/src/main.jsx"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./simpleatom.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simpleatom</title>
+  {% if debug %}
+  <script type="module">
+    import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => { }
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  </script>
+  <script type="module" src="http://localhost:5173/src/main.jsx"></script>
+  {% else %}
+  <script type="module" crossorigin src="{% static '/assets/index-CiF1wDiI.js'%}"></script>
+  <link rel="stylesheet" crossorigin href="{% static '/assets/index-B_VaPprq.css'%}">
+  {% endif %}
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>
