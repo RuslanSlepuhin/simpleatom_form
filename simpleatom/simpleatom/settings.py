@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o7pqx@1_!(1qwe6z#o02o(^+tt)u!9%9^9dk*fq(g&pl*gd5wt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = [
 #     '89.116.23.47',
@@ -33,6 +33,14 @@ DEBUG = False
 # ]
 
 ALLOWED_HOSTS = ['*']
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1",
+    "http://localhost",
+    "http://simpleatom.io"
+]
+
 
 # Application definition
 
@@ -46,7 +54,6 @@ INSTALLED_APPS = [
     'form',
     'rest_framework',
     'corsheaders',
-    'frontend.apps.FrontendConfig'
 
 ]
 
@@ -59,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+
 ]
 
 ROOT_URLCONF = 'simpleatom.urls'
@@ -67,7 +74,7 @@ ROOT_URLCONF = 'simpleatom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "frontend", "frontend", "html")],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,11 +135,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "/static/"
+STATIC_URL = 'static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "frontend", "frontend", "public"),
-    os.path.join(BASE_DIR, "frontend", "frontend", "dist"),
+    os.path.join(BASE_DIR, 'static'),
 )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -141,28 +146,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ALL_ORIGINS = False
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1",
-    "http://localhost",
-    "http://simpleatom.io"
-]
-
-REST_FRAMEWORK = {
-  'DEFAULT_PERMISSION_CLASSES': [
-    "rest_framework.permissions.AllowAny"
-  ],
-  'DEFAULT_AUTHNTICATION_CLASSES': [
-    "rest_framework.authntication.SessionAuthentication"
-  ],
-}
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-INTERNAL_IPS = [
-  "localhost",
-  "127.0.0.1",
-]
